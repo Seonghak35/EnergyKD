@@ -1,0 +1,25 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "energydkd,vgg13,vgg8"
+  PROJECT: "cifar100_energy_based"
+DISTILLER:
+  TYPE: "energyDKD"
+  TEACHER: "vgg13"
+  STUDENT: "vgg8"
+SOLVER:
+  BATCH_SIZE: 64
+  EPOCHS: 360
+  LR: 0.05
+  LR_DECAY_STAGES: [150, 180, 210, 240, 270, 300]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0005
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+energyDKD:
+  T:
+    HIGH: 6.0
+    LOW: 2.0
+  BETA: 6.0   
+ENERGY:
+  HIGH_RATE: 0.1
+  LOW_RATE: 0.1
