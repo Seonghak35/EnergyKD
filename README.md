@@ -25,7 +25,7 @@ python setup.py develop
 
 1. Evaluation
 
-- You can see "energy_eval.sh"
+- You can see `energy_eval.sh`.
 
 
   ```bash 
@@ -51,7 +51,7 @@ python setup.py develop
 
 2. Training
 
-- The weights of the teacher models can be created before implementing Energy KD. (Refer to "teacher.sh")
+- The weights of the teacher models can be created before implementing Energy KD. (Refer to `teacher.sh`)
 
   ```bash
   # Teacher models
@@ -59,13 +59,13 @@ python setup.py develop
   python tools/train.py --cfg configs/cifar100/teacher/res32x4.yaml
   python tools/train.py --cfg configs/cifar100/teacher/vgg13.yaml
 
-  # Move "student_best" into "download_ckpts/cifar_teachers/"
+  # Move `student_best` into `download_ckpts/cifar_teachers/`
   mv output/cifar100_teacher/teacher,wrn40_2/student_best download_ckpts/cifar_teachers/wrn_40_2_vanilla/ckpt_epoch_240.pth
   mv output/cifar100_teacher/teacher,res32x4/student_best download_ckpts/cifar_teachers/resnet32x4_vanilla/ckpt_epoch_240.pth
   mv output/cifar100_teacher/teacher,vgg13/student_best download_ckpts/cifar_teachers/vgg13_vanilla/ckpt_epoch_240.pth
   ```
 
-- If the teacher models are prepared, you can train the student models using Energy KD, as demonstrated in the "energy_train.sh".
+- If the teacher models are prepared, you can train the student models using Energy KD, as demonstrated in the `energy_train.sh`.
 
   ```bash
   # Energy KD
